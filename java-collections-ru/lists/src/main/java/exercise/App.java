@@ -21,6 +21,7 @@ public class App {
         for (int r = 0; r < lowerWord.length(); r++) {
             if (listOfWords.get(r).equals(listOfSymbols.get(countOfSymbols))) {
                 newList.add(listOfSymbols.get(countOfSymbols));
+                listOfSymbols.remove(r);
                 countOfSymbols = 0;
             } else if (!(listOfWords.get(r).equals(listOfSymbols.get(countOfSymbols)))) {
                 countOfSymbols +=1;
