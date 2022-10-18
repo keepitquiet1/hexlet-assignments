@@ -1,12 +1,12 @@
 package exercise;
-
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.List;
+
 // BEGIN
-public class App {
-    public static boolean scrabble(String symbols, String word) {
+public   {
+    public static boolean scrabble(  ) {
         String lowerSymbols = symbols.toLowerCase(Locale.ROOT);
         String lowerWord = word.toLowerCase(Locale.ROOT);
         List<String> listOfSymbols = new ArrayList<>();
