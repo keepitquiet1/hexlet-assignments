@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.List;
 // BEGIN
-public class App {
+public class main {
     public static boolean scrabble(String symbols, String word) {
         String lowerSymbols = symbols.toLowerCase(Locale.ROOT);
         String lowerWord = word.toLowerCase(Locale.ROOT);
