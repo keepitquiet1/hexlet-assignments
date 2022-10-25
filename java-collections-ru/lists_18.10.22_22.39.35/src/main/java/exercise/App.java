@@ -1,12 +1,12 @@
 package exercise;
-
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.List;
+
 // BEGIN
 public class App {
-    public static boolean scrabble(String symbols, String word) {
+public static boolean scrabble(String symbols, String word) {
         String lowerSymbols = symbols.toLowerCase(Locale.ROOT);
         String lowerWord = word.toLowerCase(Locale.ROOT);
         List<String> listOfSymbols = new ArrayList<>();
@@ -19,31 +19,21 @@ public class App {
                 listOfWords.add(String.valueOf(lowerWord.charAt(x)));
         }
         int countOfSymbols = 0;
-        for (int r = 0; r <= lowerWord.length() - 1; r++) {
-                if (lowerSymbols.length() < lowerWord.length()) {
-                        return false;
-                }
-                if (countOfSymbols >= lowerSymbols.length()) {
-                        return false;
-                }
-                else if (listOfWords.get(r).equals(listOfSymbols.get(countOfSymbols))) {
+        for (int r = 0; r < lowerWord.length(); r++) {
+                if (listOfWords.get(r).equals(listOfSymbols.get(countOfSymbols))) {
                         newList.add(listOfSymbols.get(countOfSymbols));
                         listOfSymbols.remove(countOfSymbols);
                         countOfSymbols = 0;
                 } else if (!(listOfWords.get(r).equals(listOfSymbols.get(countOfSymbols)))) {
-                        countOfSymbols += 1;
-                        r -= 1;
-                } else {
-                        return false;
+                        countOfSymbols +=1;
+                        r -=1;
                 }
         }
         for (int s = 0; s < lowerWord.length(); s++) {
                 if (!(newList.get(s).equals(listOfWords.get(s)))) {
                         return false;
                 }
-        }
-        return true;
-
+        } return true;
 }
 }
 
