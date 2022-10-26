@@ -13,7 +13,7 @@ public static boolean scrabble(String symbols, String word) {
         int countOfSymbols = 0;
         for (int r = 0; r <= lowerWord.length() - 1; r++) {
                 }
-                else if (countOfSymbols >= lowerSymbols.length()) {
+                if (countOfSymbols >= lowerSymbols.length()) {
                         return false;
                 }
                 else if (lowerWord.charAt(r)==(lowerSymbols.charAt(countOfSymbols))) {
