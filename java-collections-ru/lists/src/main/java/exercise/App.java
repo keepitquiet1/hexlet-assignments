@@ -7,12 +7,12 @@ import java.util.List;
 // BEGIN
 public class App {
 public static boolean scrabble(String symbols, String word){
-        String lowerSymbols = symbols.toLowerCase(Locale.ROOT);
         String lowerWord = word.toLowerCase(Locale.ROOT);
         int countOfSymbols = 0;
         String newWord = "";
-        for (int r = 0; r <= lowerWord.length() - 1; r++) {
-                if (countOfSymbols >= lowerSymbols.length()) {
+        for (int r = 0; r < lowerWord.length(); r++) {
+                String lowerSymbols = symbols.toLowerCase(Locale.ROOT);
+                if (countOfSymbols > lowerSymbols.length()) {
                         return false;
                 }
                 else if (lowerWord.charAt(r)==(lowerSymbols.charAt(countOfSymbols))) {
@@ -23,10 +23,11 @@ public static boolean scrabble(String symbols, String word){
                 } else if (lowerWord.charAt(r)!=(lowerSymbols.charAt(countOfSymbols))) {
                         countOfSymbols += 1;
                         r -= 1;
-                }
-        } System.out.println(lowerWord);
-        System.out.println(newWord);
-        System.out.println(lowerSymbols);
+                } System.out.println(lowerWord);
+                System.out.println(newWord);
+                System.out.println(lowerSymbols);
+        }
+
         for (int s = 0; s < lowerWord.length(); s++) {
                 if (!(newWord.equals(lowerWord))) {
                         return false;
