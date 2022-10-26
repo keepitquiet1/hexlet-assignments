@@ -6,27 +6,29 @@ import java.util.List;
 
 // BEGIN
 public class App {
-public static boolean scrabble(String symbols, String word) {
-
+public static boolean scrabble(String symbols, String word){
         String lowerSymbols = symbols.toLowerCase(Locale.ROOT);
         String lowerWord = word.toLowerCase(Locale.ROOT);
         int countOfSymbols = 0;
+        String newWord = "";
         for (int r = 0; r <= lowerWord.length() - 1; r++) {
                 if (countOfSymbols >= lowerSymbols.length()) {
                         return false;
                 }
                 else if (lowerWord.charAt(r)==(lowerSymbols.charAt(countOfSymbols))) {
-                        lowerSymbols = lowerSymbols.replaceAll(String.valueOf(lowerSymbols.charAt(r)), "");
-                } else if (!(lowerWord.charAt(r)==(lowerSymbols.charAt(countOfSymbols)))) {
+                        String hlowerSymbols = lowerSymbols.replaceAll(String.valueOf(lowerSymbols.charAt(countOfSymbols)), "");
+                        newWord = newWord + lowerSymbols.charAt(countOfSymbols);
+                        countOfSymbols = 0;
+                        lowerSymbols = hlowerSymbols;
+                } else if (lowerWord.charAt(r)!=(lowerSymbols.charAt(countOfSymbols))) {
                         countOfSymbols += 1;
                         r -= 1;
-                } else {
-                        System.out.println("false");
-                        return false;
                 }
-        }
+        } System.out.println(lowerWord);
+        System.out.println(newWord);
+        System.out.println(lowerSymbols);
         for (int s = 0; s < lowerWord.length(); s++) {
-                if (!(lowerSymbols.equals(lowerWord))) {
+                if (!(newWord.equals(lowerWord))) {
                         return false;
                 }
         }
