@@ -16,7 +16,7 @@ public static boolean scrabble(String symbols, String word){
                         return false;
                 }
                 else if (lowerWord.charAt(r)==(lowerSymbols.charAt(countOfSymbols))) {
-                        String hlowerSymbols = lowerSymbols.replaceAll(String.valueOf(countOfSymbols), "");
+                        String hlowerSymbols = lowerSymbols.replaceFirst(String.valueOf(lowerSymbols.charAt(countOfSymbols)), "");
                         newWord = newWord + lowerSymbols.charAt(countOfSymbols);
                         countOfSymbols = 0;
                         lowerSymbols = hlowerSymbols;
