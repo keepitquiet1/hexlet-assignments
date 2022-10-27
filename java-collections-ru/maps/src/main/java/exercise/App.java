@@ -17,20 +17,18 @@ public class App {
             }
             wordsCount.put(word, wordsCount.get(word) + 1);
             }
-            System.out.println(wordsCount);
             return wordsCount;
     }
     public static String toString(Map wordsCount) {
         Map<String, Integer> newMap = new HashMap<>();
         String str = "{\n";
         if (wordsCount == null) {
-            return null;
+            return "{}";
         }
         for (Object word : wordsCount.keySet()) {
             str = str + "  " + word + ": " + wordsCount.get(word) + "\n";
         }
         str = str + "}";
-        System.out.println(str);
         return str;
     }
 }
