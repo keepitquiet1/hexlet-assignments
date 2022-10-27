@@ -21,7 +21,7 @@ public class App {
     }
     public static String toString(Map wordsCount) {
         Map<String, Integer> newMap = new HashMap<>();
-        String str = "{\n";
+        String str = "{";
         if (wordsCount == null) {
             return "{}";
         }
