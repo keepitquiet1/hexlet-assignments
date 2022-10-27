@@ -9,7 +9,7 @@ public class App {
         String[] sentenceArr = sentence.split(" ");
         Map<String, Integer> wordsCount = new HashMap<>();
         if (sentence.equals("")) {
-            return null;
+            return wordsCount;
         }
         for (String word : sentenceArr) {
             if (!wordsCount.containsKey(word)) {
