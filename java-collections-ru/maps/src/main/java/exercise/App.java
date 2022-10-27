@@ -22,13 +22,14 @@ public class App {
     public static String toString(Map wordsCount) {
         Map<String, Integer> newMap = new HashMap<>();
         String str = "{";
-        if (wordsCount == null) {
-            return "{}";
-        }
         for (Object word : wordsCount.keySet()) {
+            if (str.equals("")) {
+                return "";
+            }
             str = str + "  " + word + ": " + wordsCount.get(word) + "\n";
         }
         str = str + "}";
+        System.out.println(str);
         return str;
     }
 }
