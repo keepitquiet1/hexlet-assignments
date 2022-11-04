@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Map.Entry;
 
 // BEGIN
+public class App {
 public static List findWhere(List<Map<String, String>> books, Map checkMap) {
         List<String> newBook = new ArrayList<>();
             for (int i = 0; i < books.size(); i++) {
