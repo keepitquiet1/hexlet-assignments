@@ -10,22 +10,23 @@ public class App {
     public static List findWhere(List<Map<String, String>> books, Map<String, String> checkMap) {
         List<Map<String, String>> newBook = new ArrayList<>();
         int count = 0;
-        for (int i = 0; i<books.size(); i++) {
-            for (Map.Entry<String, String> book : books.get(i).entrySet()) {
+            for (int i = 0; i < books.size(); i++) {
                 for (Map.Entry<String, String> check : checkMap.entrySet()) {
-                    boolean bool = (check.getValue().equals(book.getValue()));
-                    if (bool==false) {
-//                        newBook.add(books.get(i));
+                    boolean bool = ((books.get(i).containsKey(check.getKey()))&(books.get(i).containsValue(check.getValue())));
+                    if (bool == true) {
                         count+=1;
-                        break;
-                    } else if (bool) {
-                        newBook.add(books.get(i));
-                    } if (count==1) {
-                        newBook.remove(i);
                     }
+                    else if (bool==false) {
+                        count = 0;
+                    }
+                    if (count==checkMap.size()) {
+                        newBook.add(books.get(i));
+                    }
+                    System.out.println("count is " + count);
+                    System.out.println(newBook);
+                    System.out.println("check is " + check);
                 }
-            }
-        } System.out.println(newBook);
+            } System.out.println("final is: " + newBook);
         return newBook;
     }
 }
