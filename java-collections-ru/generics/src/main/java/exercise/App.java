@@ -7,12 +7,15 @@ import java.util.Map.Entry;
 
 // BEGIN
 public class App {
-public static List findWhere(List<Map<String, String>> books, Map<String, String> checkMap) {
+    public static List findWhere(List<Map<String, String>> books, Map<String, String> checkMap) {
         List<Map<String, String>> newBook = new ArrayList<>();
         for (int i = 0; i<books.size(); i++) {
             for (Map.Entry<String, String> book : books.get(i).entrySet()) {
                 for (Map.Entry<String, String> check : checkMap.entrySet()) {
-                    if (check.getValue().equals(book.getValue())) {
+                    boolean bool = (check.getValue().equals(book.getValue()));
+                    if (bool==false) {
+                        break;
+                    } else {
                         newBook.add(books.get(i));
                     }
                 }
@@ -22,3 +25,4 @@ public static List findWhere(List<Map<String, String>> books, Map<String, String
     }
 }
 
+//END
