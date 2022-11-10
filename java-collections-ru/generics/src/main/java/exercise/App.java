@@ -19,7 +19,7 @@ public class App {
                     else if (bool==false) {
                         count = 0;
                     }
-                    if (count==checkMap.size()) {
+                    if (count>checkMap.size()) {
                         newBook.add(books.get(i));
                     }
                     System.out.println("count is " + count);
