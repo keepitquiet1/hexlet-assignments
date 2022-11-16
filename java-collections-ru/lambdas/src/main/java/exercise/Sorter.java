@@ -9,13 +9,7 @@ import java.util.stream.Collectors;
 // BEGIN
 public class Sorter {
 public static List takeOldestMans(List<Map<String, String>> users) {
-        List maleList = users.stream().filter(user -> user.get("gender").equals("male")).map(user -> user.get("name")).sorted(Comparator.naturalOrder()).collect(Collectors.toList());
-        int a = 1;
-        for (Object birthday : maleList){
-            System.out.println(a + " = " + birthday);
-            a+=1;
-        }
-        System.out.println(maleList);
+        List maleList = users.stream().filter(user -> user.get("gender").equals("male")).sorted(Comparator.comparing(e-> e.get("birthday"))).collect(Collectors.toList());
         return maleList;
     }
 }
