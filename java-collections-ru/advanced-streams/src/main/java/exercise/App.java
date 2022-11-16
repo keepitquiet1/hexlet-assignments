@@ -4,7 +4,7 @@ import java.util.stream.Collectors;
 import java.util.Arrays;
 
 // BEGIN
-public class {
+public class App {
 public static String getForwardedVariables(String text) {
         return "&";
     }
