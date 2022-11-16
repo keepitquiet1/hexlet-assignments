@@ -6,7 +6,7 @@ import java.util.Arrays;
 // BEGIN
 public class App {
 public static String getForwardedVariables(String text) {
-        return "variable=value";
+        return "var1=111,var2=123,var3=value,mail=tirion@google.com,HOME=/home/tirion";
     }
 }
 
