@@ -2,7 +2,7 @@ package exercise;
 
 import java.util.stream.Collectors;
 import java.util.Arrays;
-
+import java.util.*;
 // BEGIN
 public class App {
     public static String getForwardedVariables(String confFile) {
