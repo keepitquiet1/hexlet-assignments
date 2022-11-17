@@ -6,16 +6,20 @@ import java.util.Arrays;
 // BEGIN
 public class App {
     public static String getForwardedVariables(String confFile) {
-
             List<String> resultList = Arrays.stream(confFile.split("\n"))
                     .filter(str -> str.startsWith("environment"))
                     .map(obj -> obj.replace("environment=", ""))
-                    .map(s -> s.replace("X_FORWARDED_", ""))
-                    .map(c -> c.replace(",", ""))
+                    .map(d -> d.replace("\"", ""))
                     .map(l -> l.replace(" ", ""))
                     .collect(Collectors.toList());
-            System.out.println(resultList);
-            return resultList.toString();
+            var resultListToString = resultList.toString();
+            List<String> resList = Arrays.stream(resultListToString
+                    .split(","))
+                    .filter(s -> s.contains("X_FORWARDED_"))
+                    .map(s -> s.replace("X_FORWARDED_", ""))
+                    .collect(Collectors.toList());
+            System.out.println(resList);
+            return resList.toString();
         }
     }
 
