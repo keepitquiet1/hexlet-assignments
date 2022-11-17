@@ -12,7 +12,7 @@ public class App {
             .map(d -> d.replace("\"", ""))
             .map(l -> l.replace(" ", ""))
             .collect(Collectors.toList());
-            var resultListToString = resultList.toString();
+        var resultListToString = resultList.toString();
         List<String> resList = Arrays.stream(resultListToString
             .split(","))
             .filter(s -> s.contains("X_FORWARDED_"))
@@ -20,7 +20,7 @@ public class App {
             .collect(Collectors.toList());
         System.out.println(resList);
         return resList.toString();
-        }
     }
+}
 
 //END
