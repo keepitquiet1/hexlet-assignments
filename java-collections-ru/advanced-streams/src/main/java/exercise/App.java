@@ -2,7 +2,7 @@ package exercise;
 
 import java.util.stream.Collectors;
 import java.util.Arrays;
-
+import java.util.*;
 // BEGIN
 public class App {
     public static String getForwardedVariables(String confFile) {
@@ -18,8 +18,8 @@ public class App {
             .filter(s -> s.contains("X_FORWARDED_"))
             .map(s -> s.replace("X_FORWARDED_", ""))
             .collect(Collectors.toList());
-        System.out.println(resList);
-        return resList.toString();
+        var l = resList.toString().replace("[", "").replace("]", "");
+        return l;
     }
 }
 
