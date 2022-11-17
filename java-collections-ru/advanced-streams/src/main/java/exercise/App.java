@@ -18,7 +18,7 @@ public class App {
             .filter(s -> s.contains("X_FORWARDED_"))
             .map(s -> s.replace("X_FORWARDED_", ""))
             .collect(Collectors.toList());
-        var l = resList.toString().replace("[", "").replace("]", "");
+        var l = resList.toString().replace("[", "").replace("]", "").replace(" ", "");
         return l;
     }
 }
