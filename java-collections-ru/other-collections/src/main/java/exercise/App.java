@@ -19,6 +19,10 @@ public static LinkedHashMap genDiff(Map<String, Object> data1, Map<String, Objec
                 keys.add(d2);
             }
         } System.out.println(keys);
+        HashSet<Object> data1Values = new HashSet<>(data1.values());
+        HashSet<Object> data2Values = new HashSet<>(data2.values());
+        System.out.println(data1Values);
+        System.out.println(data2Values);
             for (Object key : keys) {
                 String keyString = key.toString();
                 if (!(data1.containsKey(keyString))
@@ -28,21 +32,18 @@ public static LinkedHashMap genDiff(Map<String, Object> data1, Map<String, Objec
                 if ((data1.containsKey(keyString))
                         & (!(data2.containsKey(keyString)))) {
                     result.put(keyString, "deleted");
+                }
+                if ((data1.containsKey(keyString))
+                        & (data2.containsKey(keyString))
+                        & (data1.get(keyString).equals(data2.get(keyString)))) {
+                    result.put(keyString, "unchanged");
                 } else if ((data1.containsKey(keyString))
-                        & ((data2.containsKey(keyString)))) {
-                    for (Map.Entry<String, Object> keyChanged1 : data1.entrySet()) {
-                        for (Map.Entry<String, Object> keyChanged2 : data2.entrySet()) {
-                            if (!(keyChanged1.getValue().toString().equals(keyChanged2.getValue().toString()))) {
-                                result.put(keyString, "changed");
-                            } else {
-                                result.put(keyString, "unchanged");
-                            }
-                        }
-                    }
+                        & (data2.containsKey(keyString))
+                        & (!(data1.get(keyString).equals(data2.get(keyString))))) {
+                    result.put(keyString, "changed");
                 }
             }System.out.println(result);
         return result;
         }
-}
+    }
 
-//END
