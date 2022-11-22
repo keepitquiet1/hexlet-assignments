@@ -43,5 +43,6 @@ public static LinkedHashMap genDiff(Map<String, Object> data1, Map<String, Objec
             }System.out.println(result);
         return result;
         }
+}
 
 //END
