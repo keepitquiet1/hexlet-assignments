@@ -30,5 +30,4 @@ public class Disconnected implements Connection{
         System.out.println("Error! Connection disconnected");
     }
 }
-
 // END
