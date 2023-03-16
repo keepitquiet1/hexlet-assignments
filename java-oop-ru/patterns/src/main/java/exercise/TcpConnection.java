@@ -2,6 +2,7 @@ package exercise;
 import java.util.List;
 import java.util.ArrayList;
 import exercise.connections.Connection;
+import exercise.connections.Connected;
 import exercise.connections.Disconnected;
 // BEGIN
 public class TcpConnection implements  TCP {
