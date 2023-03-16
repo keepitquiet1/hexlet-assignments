@@ -1,6 +1,4 @@
 package exercise.connections;
-import exercise.java.util.TcpConnection;
-import java.util.Connection;
 // BEGIN
 public class Disconnected implements Connection{
     private TcpConnection connection;
