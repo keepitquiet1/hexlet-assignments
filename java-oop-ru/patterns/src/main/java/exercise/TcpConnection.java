@@ -1,7 +1,7 @@
 package exercise;
 import java.util.List;
 import java.util.ArrayList;
-import exercise.connections.Connection.java;
+import connections.Connection;
 // BEGIN
 public class TcpConnection implements  TCP {
     private Connection connection;

@@ -1,4 +1,4 @@
-package exercise; 
+package exercise;
 public interface TCP {
     String getCurrentState();
     void connect();
