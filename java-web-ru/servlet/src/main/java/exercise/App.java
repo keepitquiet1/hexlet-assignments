@@ -28,8 +28,6 @@ public class App {
         // BEGIN
         app.addServlet(ctx, "WelcomeServlet", new WelcomeServlet());
         ctx.addServletMappingDecoded("/hello", "WelcomeServlet");
-        app.start();
-        app.getServer().await();
         // END
 
         return app;
