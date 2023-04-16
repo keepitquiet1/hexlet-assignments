@@ -18,7 +18,7 @@ public class WelcomeServlet extends HttpServlet {
 
         // Помещаем в ответ строку "Hello, World!"
         PrintWriter out = response.getWriter();
-        out.println("Hello, World!");
+        out.println("Hello, Hexlet!");
     }
 }
 // END
