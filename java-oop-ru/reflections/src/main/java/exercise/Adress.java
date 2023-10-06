@@ -1,2 +1,1 @@
- @NotNull
-    @MinLength
+
